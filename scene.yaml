@@ -4,10 +4,28 @@ cameras:
 
 lights:
     light1:
+        visible: true
         type: directional
         direction: [0, 1, -.5]
         diffuse: .3
         ambient: 1
+    light2: 
+      visible: false
+      type: point
+      position: [-74.0170, 40.7031, 100]
+      origin: ground
+      ambient: .3
+      diffuse: 1
+      specular: .2
+    light3: 
+      visible: false
+      type: spotlight
+      position: [-74.0170, 40.7031, 100]
+      ambient: .3
+      diffuse: 2
+      specular: .2
+      exponent: 50.
+      direction: [1, 1, 0]
 
 sources:
     osm:
@@ -21,21 +39,21 @@ layers:
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#ddeeee'
+                color: '#BADFE7'
 
     landuse:
         data: { source: osm }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#aaffaa'
+                color: '#14A853'
 
     water:
         data: { source: osm }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#88bbee'
+                color: '#003366'
 
     roads:
         data: { source: osm }
@@ -53,10 +71,10 @@ layers:
             draw:
                 lines:
                     order: function() { return feature.sort_rank; }
-                    color: '#cc6666'
-                    width: 12
+                    color: '#18A0AD'
+                    width: 13
                     outline:
-                        color: grey
+                        color: black
                         width: 1.5
         minor_road:
             filter:

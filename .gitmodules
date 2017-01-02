@@ -1,0 +1,3 @@
+[submodule "tangram-map"]
+	path = tangram-map
+	url = https://github.com/sbrks/tangram-map
